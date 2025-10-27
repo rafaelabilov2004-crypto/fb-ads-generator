@@ -31,3 +31,39 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Fix for white placeholder text - make it visible */
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: #9ca3af !important; /* gray-400 */
+  opacity: 1 !important;
+}
+
+/* Ensure input text is always visible */
+input,
+textarea,
+select {
+  color: #1f2937 !important; /* gray-800 - dark text */
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  input::placeholder,
+  textarea::placeholder,
+  select::placeholder {
+    color: #6b7280 !important; /* gray-500 for dark mode */
+  }
+  
+  input,
+  textarea,
+  select {
+    color: #f9fafb !important; /* gray-50 - light text for dark mode */
+  }
+}
+
+/* Additional styling for better visibility */
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: #d1d5db !important; /* gray-300 when focused */
+}
